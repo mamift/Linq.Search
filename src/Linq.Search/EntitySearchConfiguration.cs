@@ -240,7 +240,7 @@ namespace CityofEdmonton.Linq.Search
             var configType = typeof(EntitySearchConfiguration<T>);
             var entityType = typeof(T);
             var entityProperties = entityType.GetProperties();
-            var defaultSearchFieldNamesUpper = Options.DefaultSearchFieldNames.Select(s => s?.ToUpperInvariant()).ToArray();
+            var defaultSearchFieldNamesUpper = SearchConfigurationOptions.DefaultSearchFieldNames.Select(s => s?.ToUpperInvariant()).ToArray();
             var defaultSearchFieldPropertyCount = entityProperties
                 .Count(p => defaultSearchFieldNamesUpper.Contains(p.Name.ToUpperInvariant()));
 

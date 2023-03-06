@@ -28,10 +28,12 @@ namespace CityofEdmonton.Linq.Search
         //    }
         //}
 
-        private readonly ICollection<string> _defaultSearchFieldNames = new List<string>();
-        internal IEnumerable<string> DefaultSearchFieldNames => _defaultSearchFieldNames.Any()
-            ? _defaultSearchFieldNames
-            : new string[] { "Name", "Title", "Description" };
+        private static readonly ICollection<string> _defaultSearchFieldNames = new List<string>()
+        {
+            "Name", "Title", "Description"
+        };
+
+        internal static IEnumerable<string> DefaultSearchFieldNames => _defaultSearchFieldNames;
 
         /// <summary>
         /// 
